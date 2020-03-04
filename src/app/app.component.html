@@ -1,0 +1,17 @@
+<div class="container">
+  <div *ngIf="afAuth.authState | async as user; else login">
+    <app-user-details></app-user-details>
+  </div>
+  <ng-template #login>
+    <div 
+      class="row"
+      *ngIf="authService.phoneSignIn; else loginOptions">
+      <app-phone-signin></app-phone-signin>
+    </div>
+    <ng-template #loginOptions>
+      <app-login-options></app-login-options>
+      <app-signin-signup></app-signin-signup>
+    </ng-template>
+  </ng-template>
+  
+</div>

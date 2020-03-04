@@ -1,0 +1,11 @@
+<div 
+  class="card" 
+  style="width: 18rem;"
+  *ngIf="afAuth.authState | async as user">
+  <img class="card-img-top" [src]="user.photoURL" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ user.displayName }}</h5>
+    <p class="card-text">{{ user.email }}</p>
+    <a (click)="logout()" class="btn btn-primary">Logout</a>
+  </div>
+</div>

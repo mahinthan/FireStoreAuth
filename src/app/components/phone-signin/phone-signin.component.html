@@ -1,0 +1,16 @@
+<div class="form-group">
+  <label for="phoneNumber">Phone Number</label>
+  <input name="phoneNumber" [(ngModel)]="phoneNumber" type="text" class="form-control">
+</div>
+<div id="recaptcha-container"></div>
+<button 
+  class="btn btn-primary btn-block"
+  [disabled]="disableOTPSendButton"
+  (click)="sendOTP()">Send OTP</button>
+<hr>
+<div class="form-group">
+  <label for="otp">OTP</label>
+  <input name="otp" [(ngModel)]="otp" type="text" class="form-control">
+</div>
+<button class="btn btn-primary btn-block" (click)="verifyOTP()">Verify OTP</button>
+<button class="btn btn-primary btn-block" (click)="togglePhoneSignIn()">Cancel</button>
